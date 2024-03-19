@@ -18,6 +18,8 @@ const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toUpperCase();
 
+  
+
   if(playerSelection === 'ROCK' && computerSelection === 'Rock') {
     return 'You have a draw!';
   } else if (playerSelection === 'ROCK' && computerSelection === 'Paper') {
@@ -36,6 +38,8 @@ function playRound(playerSelection, computerSelection) {
     return 'You Win! Scissors beats Paper';
   } else if (playerSelection === 'SCISSORS' && computerSelection === 'Scissors') {
     return 'You have a draw!';
+  } else if (playerSelection !== 'SCISSORS' || 'PAPER' || 'ROCK') {
+    return alert('You entered the wrong value! Try again');
   }
 }
 
