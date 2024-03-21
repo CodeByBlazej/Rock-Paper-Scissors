@@ -14,8 +14,10 @@ function getComputerChoice() {
 const computerSelection = getComputerChoice();
 const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?', '');
 let draw = 'You have a draw!';
-let youWin = 'You Win!';
-let computerWin = 'You Lose!';
+let playerWins = 'You Win!';
+let computerWins = 'You Lose!';
+let computerScore = 0;
+let playerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toUpperCase();
@@ -25,19 +27,19 @@ function playRound(playerSelection, computerSelection) {
   if(playerSelection === 'ROCK' && computerSelection === 'Rock') {
     return draw;
   } else if (playerSelection === 'ROCK' && computerSelection === 'Paper') {
-    return computerWin;
+    return computerWins + ` Computer Score is ${(++computerScore)}`;
   } else if (playerSelection === 'ROCK' && computerSelection === 'Scissors') {
-    return youWin;
+    return playerWins + ` Player Score is ${(++playerScore)}`;
   } else if (playerSelection === 'PAPER' && computerSelection === 'Rock') {
-    return youWin;
+    return playerWins + ` Player Score is ${(++playerScore)}`;
   } else if (playerSelection === 'PAPER' && computerSelection === 'Paper') {
     return draw;
   } else if (playerSelection === 'PAPER' && computerSelection === 'Scissors') {
-    return computerWin;
+    return computerWins + ` Computer Score is ${(++computerScore)}`;
   } else if (playerSelection === 'SCISSORS' && computerSelection === 'Rock') {
-    return computerWin;
+    return computerWins + ` Computer Score is ${(++computerScore)}`;
   } else if (playerSelection === 'SCISSORS' && computerSelection === 'Paper') {
-    return youWin;
+    return playerWins + ` Player Score is ${(++playerScore)}`;
   } else if (playerSelection === 'SCISSORS' && computerSelection === 'Scissors') {
     return draw;
   } else if (playerSelection !== 'SCISSORS' || 'PAPER' || 'ROCK') {
@@ -47,16 +49,37 @@ function playRound(playerSelection, computerSelection) {
 
 // console.log(playRound(playerSelection, computerSelection));
 
-function playGame() {
-  playRound(playerSelection, computerSelection)
+// function playGame() {
+//   let counter = 0;
+//   while (counter < 5) {
+//     let round = playRound(playerSelection, computerSelection);
+//     // round;
+//     if(computerScore < 5 && playerScore < 5) {
+//       // round;
+//     } else if (computerScore > playerScore) {
+//       return `You Lose! Computer Score is ${computerScore} and Your Score is ${playerScore}`;
+//     } else if (computerScore < playerScore) {
+//       return `You Win! Your Score is ${playerScore} and Computer Score is ${computerScore}`;
+//     }
 
-  if(draw) {
-    return 'drawwwwww'
-  } else {
-    return 'no'
+//     counter++
+//   }  
+// }
+
+function playGame() {
+  round = playRound(playerSelection, computerSelection);
+  while (round < 1) {
+    round++
+    if(playerScore < 5) {
+      round++
+    } else {
+      return 'end'
+    }
   }
-}
+    console.log(round); 
+  }
 
 console.log(playGame());
+// remember tomorrow about let result and let score!
 
 
