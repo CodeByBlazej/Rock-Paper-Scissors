@@ -1,5 +1,5 @@
 const computerSelection = getComputerChoice();
-const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?', '');
+const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
 let draw = 'You have a draw!';
 let playerWins = 'You Win!';
 let computerWins = 'You Lose!';
@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
 
 function playGame() {  
   for(let i = 0; i < 5; i++){
-    const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?', '');
+    const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
     const computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
   }
