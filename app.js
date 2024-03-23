@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === 'SCISSORS' && computerSelection === 'Scissors') {
     return draw;
   } else if (playerSelection !== 'SCISSORS' || 'PAPER' || 'ROCK') {
-    return alert('You entered the wrong value! Try again');
+    return 'You entered the wrong value! Try again';
   }
 }
 
@@ -63,7 +63,7 @@ function playGame() {
   }
 }
 
-playGame();
+console.log(playGame());
 
 
 
