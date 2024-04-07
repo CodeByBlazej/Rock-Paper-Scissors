@@ -1,10 +1,17 @@
-const computerSelection = getComputerChoice();
-const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
+const paperBTN = document.querySelector(".paper");
+const rockBTN = document.querySelector(".rock");
+const scissorsBTN = document.querySelector(".scissors");
+
+// const computerSelection = getComputerChoice();
+// const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
 let draw = 'You have a draw!';
 let playerWins = 'You Win!';
 let computerWins = 'You Lose!';
 let computerScore = 0;
 let playerScore = 0;
+
+
+
 
 
 function getComputerChoice() {
@@ -68,6 +75,18 @@ function playRound(playerSelection, computerSelection) {
 // }
 
 // console.log(playGame());
+
+rockBTN.addEventListener('click', () => {
+  console.log(playRound("rock", getComputerChoice()));
+});
+
+paperBTN.addEventListener('click', () => {
+  console.log(playRound("paper", getComputerChoice()));
+});
+
+scissorsBTN.addEventListener('click', () => {
+  console.log(playRound("scissors", getComputerChoice()));
+});
 
 
 
