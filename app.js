@@ -47,27 +47,29 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function playGame() {  
-  for(let i = 0; i < 5; i++){
-    const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
-    const computerSelection = getComputerChoice();
-    if(playerSelection === null) {
-      return 'Please enter correct value!'
-    } else {
-      console.log(playRound(playerSelection, computerSelection));
-    }
-  }
+// function playGame() {  
+//   for(let i = 0; i < 5; i++){
+//     const playerSelection = prompt('What do you choose? Paper, Scissors or Rock?');
+//     const computerSelection = getComputerChoice();
+//     if(playerSelection === null) {
+//       return 'Please enter correct value!'
+//     } else {
+//       console.log(playRound(playerSelection, computerSelection));
+//     }
+//   }
 
-  if(computerScore < playerScore) {
-    return 'You Win!'
-  } else if (computerScore > playerScore) {
-    return 'Computer Wins!'
-  } else {
-    return 'You have a draw!'
-  } 
-}
+//   if(computerScore < playerScore) {
+//     return 'You Win!'
+//   } else if (computerScore > playerScore) {
+//     return 'Computer Wins!'
+//   } else {
+//     return 'You have a draw!'
+//   } 
+// }
 
-console.log(playGame());
+// console.log(playGame());
+
+
 
 
 
