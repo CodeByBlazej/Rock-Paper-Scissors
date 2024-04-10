@@ -24,63 +24,33 @@ function getComputerChoice() {
   }
 }
 
-// if(playerSelection === 'ROCK' && computerSelection === 'Rock' ||
-
-// ) {
 
 
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toUpperCase();
 
 
-  if(playerSelection === 'ROCK' && computerSelection === 'Rock') {
-    result = "Draw!";
+  if  (playerSelection === 'ROCK' && computerSelection === 'Rock' ||
+      playerSelection === 'PAPER' && computerSelection === 'Paper' ||
+      playerSelection === 'SCISSORS' && computerSelection === 'Scissors') {
+        result = "Draw!";
 
-    
-  } else if (playerSelection === 'ROCK' && computerSelection === 'Paper') {
-    result = "You Lose!";
-    ++computerScore;
+  } else if (playerSelection === 'ROCK' && computerSelection === 'Paper' ||
+      playerSelection === 'PAPER' && computerSelection === 'Scissors' ||
+      playerSelection === 'SCISSORS' && computerSelection === 'Rock') {
+        result = "You Lose!";
+        ++computerScore;
 
-    
-  } else if (playerSelection === 'ROCK' && computerSelection === 'Scissors') {
-    result = "You Win!";
-    ++playerScore;
-
-    
-  } else if (playerSelection === 'PAPER' && computerSelection === 'Rock') {
-    result = "You Win!";
-    ++playerScore;
-
-    
-  } else if (playerSelection === 'PAPER' && computerSelection === 'Paper') {
-    result = "Draw!";
-
-   
-  } else if (playerSelection === 'PAPER' && computerSelection === 'Scissors') {
-    result = "You Lose!";
-    ++computerScore;
-
-    
-  } else if (playerSelection === 'SCISSORS' && computerSelection === 'Rock') {
-    result = "You Lose!";
-    ++computerScore;
-
-    
-  } else if (playerSelection === 'SCISSORS' && computerSelection === 'Paper') {
-    result = "You Win!";
-    ++playerScore;
-
-   
-  } else if (playerSelection === 'SCISSORS' && computerSelection === 'Scissors') {
-    result = "Draw!";
-
-
-  } else if (playerSelection !== 'SCISSORS' || 'PAPER' || 'ROCK') {
-    return 'You entered the wrong value! Try again';
-  }
+  } else if (playerSelection === 'ROCK' && computerSelection === 'Scissors' ||
+      playerSelection === 'PAPER' && computerSelection === 'Rock' ||
+      playerSelection === 'SCISSORS' && computerSelection === 'Paper') {
+        result = "You Win!";
+        ++playerScore;
+    }
 }
 
-let checkWinner = function () {
+
+function checkWinner() {
   if (computerScore === 5 || playerScore === 5) {
     if (computerScore < playerScore) {
       winner.textContent = 'You Won The Game!';
@@ -141,8 +111,3 @@ playAgainBTN.addEventListener('click', () => {
   winner.textContent = '';
   playAgainBTN.style.display = 'none';
 })
-
-
-
-
-
